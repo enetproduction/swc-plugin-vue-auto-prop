@@ -1,0 +1,28 @@
+{
+  "name": "@enp/swc-plugin-vue-auto-prop",
+  "version": "1.32.0",
+  "description": "@swc plugin for handling the transformation of @Prop decorator",
+  "main": "swc_plugin_vue_auto_prop.wasm",
+  "buildOptions": {
+    "customBuild": true
+  },
+  "scripts": {
+    "build:dev": "cargo build-wasi",
+    "build": "pnpm run build:dev --release",
+    "prepublishOnly": "cargo build-wasi --release",
+    "prepack": "pnpm run build && cp target/wasm32-wasi/release/swc_plugin_vue_auto_prop.wasm .",
+    "test": "pnpm run test:setup && pnpm run test:unit",
+    "test:setup": "pnpm run build:dev && cp target/wasm32-wasi/debug/swc_plugin_vue_auto_prop.wasm .",
+    "test:unit": "cd transform && cargo test --color always"
+  },
+  "files": [
+    "swc_plugin_vue_auto_prop.wasm"
+  ],
+  "preferUnplugged": true,
+  "devDependencies": {
+    "@swc/core": "1.5.7"
+  },
+  "peerDependencies": {
+    "@swc/core": "1.5.7"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": false,
+      "decorators": true
+    },
+    "target": "es2019",
+    "loose": false,
+    "minify": {
+      "compress": false,
+      "mangle": false
+    },
+    "experimental": {
+        "plugins": [
+            ["@enp/swc-plugin-vue-auto-prop", {}],
+        ]
+    }
+  },
+  "module": {
+    "type": "es6"
+  },
+  "minify": false,
+  "isModule": true
+}

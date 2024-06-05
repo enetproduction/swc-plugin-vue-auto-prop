@@ -1,0 +1,21 @@
+{
+  "name": "swc-plugin-vue-auto-prop-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:swc": "swc ./src/index.ts -o ./dist/output.js",
+    "build:lib": "cd ../ && pnpm test && cd -",
+    "build": "pnpm build:lib && pnpm build:swc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@enp/swc-plugin-vue-auto-prop": "../",
+    "@swc/cli": "0.3.12",
+    "@swc/core": "1.5.25",
+    "@swc/plugin-transform-imports": "2.0.4"
+  }
+}
